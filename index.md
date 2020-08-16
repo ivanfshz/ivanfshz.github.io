@@ -1,5 +1,4 @@
-
-![GitHub Logo](/images/GitHub-Mark-64px.png)
+[Link](https://github.com/ivanfshz) and ![GitHub Logo](/images/GitHub-Mark-64px.png)
 Format: ![Alt Text](url)
 
 ## Welcome to GitHub Pages
