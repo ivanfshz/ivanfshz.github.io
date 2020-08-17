@@ -10,7 +10,8 @@
 a,
 a:focus,
 a:hover {
-  color: #000;
+  color: #777;
+  text-decoration:none;
 }
 
 html,
@@ -26,7 +27,7 @@ body {
   -ms-flex-pack: center;
   -webkit-box-pack: center;
   justify-content: center;
-  color: #000;
+  color: #777;
 }
 
 .cover-container {
