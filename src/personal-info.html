@@ -85,51 +85,22 @@
                                 </li>
                                 </li>
                               </ul>
-                            <!-- <div>
-                                <a href="#" id="en" class="blue-color">EN</a> |
-                                <a href="#" id="es">ES</a>
-                            </div>
-                            <div>
-                                <p class="blue-color" hidden>
-                                    Come on! Please, choose a flavour!
-                                </p>
-                            </div> -->
-                            <!-- <div>
-                                <a href="#" id="pancake-resumelink">
-                                    <img id="pancake-img" src="https://img.icons8.com/cotton/64/000000/pancakes.png" />
-                                </a>
-                            </div>
-                            <div>
-                                <a href="#" id="taco-resumelink">
-                                    <img id="taco-img" src="https://img.icons8.com/windows/64/000000/taco.png" />
-                                </a>
-                            </div>
-                            <div>
-                                <p class="blue-color" hidden>
-                                    Come on! Please, choose a flavour!
-                                </p>
-                            </div> -->
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-sm text-center">
-                                    <a id="pdf-link" href="../docs/en/resume.pdf">
+                                    <a id="pdf-link" href="../docs/en/resume.pdf" target="_blank" class="blue-color">
                                         <img id="pdf" src="https://img.icons8.com/doodle/48/000000/pdf--v3.png" />
+                                        <br/>
+                                        <span class="blue-color">PDF</span>
                                     </a>
                                 </div>
                                 <div class="col-sm text-center">
-                                    <a id="html-link" href="../docs/en/resume.html">
+                                    <a id="html-link" href="../docs/en/resume.html" target="_blank" class="blue-color">
                                         <img id="html" src="https://img.icons8.com/doodle/48/000000/code-file.png" />
+                                        <br/>
+                                        <span class="blue-color">HTML</span>
                                     </a>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm text-center">
-                                    <span class="blue-color">PDF</span>
-                                </div>
-                                <div class="col-sm text-center">
-                                    <span class="blue-color">HTML</span>
                                 </div>
                             </div>
                         </div>
@@ -154,67 +125,23 @@
         $(document).ready(function () {
             $(function () {
                 $('.es').click(function () {
-                    $(".en").removeClass("blue-color");
-                    $(".es").addClass("blue-color");
-
-                    // $(this).addClass("blue-color");
-                    // $("#pdf-link").attr('href', "../docs/es/resume.pdf");
-                    // $("#html-link").attr('href', "../docs/es/resume.html");
+                    $(".es").css('color', '#53CDE4');
+                    $(".en").css('color', '#666');
+                    $("#pdf-link").attr('href', "../docs/es/resume.pdf");
+                    $("#html-link").attr('href', "../docs/es/resume.html");
                     return false;
                 });
             });
 
             $(function () {
                 $('.en').click(function () {
-                    $(".es").removeClass("blue-color");
-                    $(".en").addClass("blue-color");
-                    // $("#en").addClass("blue-color");
-                    // $("#pdf-link").attr('href', "../docs/en/resume.pdf");
-                    // $("#html-link").attr('href', "../docs/en/resume.html");
+                    $(".en").css('color', '#53CDE4');
+                    $(".es").css('color', '#666');
+                    $("#pdf-link").attr('href', "../docs/en/resume.pdf");
+                    $("#html-link").attr('href', "../docs/en/resume.html");
                     return false;
                 });
             });
-
-            // $(function () {
-            //     $('#pancake-resumelink').click(function () {
-            //         $("#pancake-img").attr('src', "https://img.icons8.com/cotton/64/000000/pancakes.png");
-            //         $("#taco-img").attr('src', "https://img.icons8.com/windows/64/000000/taco.png");
-            //         // $("#flavour").val("pancake");
-            //         return false;
-            //     });
-            // });
-
-            // $(function () {
-            //     $('#taco-resumelink').click(function () {
-            //         $("#taco-img").attr('src', "https://img.icons8.com/cute-clipart/64/000000/taco.png");
-            //         $("#pancake-img").attr('src', "https://img.icons8.com/pastel-glyph/64/000000/pancakes.png");
-            //         $("#pdf-link").attr('href', "../docs/es/resume.pdf");
-            //         $("#html-link").attr('href', "../docs/es/resume.html");
-            //         // $("#flavour").val("taco");
-            //         return false;
-            //     });
-            // });
-
-            // $(function () {
-            //     $('#pdf').click(function () {
-            //         console.log($("#flavour").val());
-            //         if ($("#flavour").val() == "taco") {
-            //             $(this).parent().attr('href', "../docs/es/resume.pdf");
-            //             return false;
-            //         }
-            //     });
-            // });
-
-            // $(function () {
-            //     $('#html').click(function () {
-            //         console.log($("#flavour").val());
-            //         if ($("#flavour").val() == "taco") {
-            //             $(this).parent().attr('href', ".../docs/es/resume.html");
-            //             return false;
-            //         }
-            //     });
-            // });
-
 
         });
 
