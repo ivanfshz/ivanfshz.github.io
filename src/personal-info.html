@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ivanfshz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="../css/cover.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <br/>
+        <br/>
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-sm text-center">
+                        <strong class="blue-color">IVAN FLORES</strong> | <span>Sr. Software Developer</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm text-center">
+                        <a href="#" data-toggle="modal" data-target="#resume">
+                            <img src="https://img.icons8.com/bubbles/100/000000/resume.png" alt="resume | PDF" />
+                        </a>
+                    </div>
+                    <div class="col-sm text-center">
+                        <a href="#">
+                            <img src="https://img.icons8.com/bubbles/100/000000/api.png" alt="resume | rest api" />
+                        </a>
+                    </div>
+                    <div class="col-sm text-center">
+                        <a href="#" alt="resume | command line">
+                            <img src="https://img.icons8.com/clouds/100/000000/console.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="container">
+            <div class="modal fade" id="resume" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h5 class="modal-title blue-color">Resume</h5>
+
+                            <button type="button" class="close blue-color" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <ul class="nav justify-content-center">
+                                <li class="nav-item">
+                                  <a class="nav-link blue-color en" href="#">EN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">|</a>
+                                  </li>
+                                <li class="nav-item">
+                                  <a class="nav-link es" href="#">ES</a>
+                                </li>
+                                </li>
+                              </ul>
+                            <!-- <div>
+                                <a href="#" id="en" class="blue-color">EN</a> |
+                                <a href="#" id="es">ES</a>
+                            </div>
+                            <div>
+                                <p class="blue-color" hidden>
+                                    Come on! Please, choose a flavour!
+                                </p>
+                            </div> -->
+                            <!-- <div>
+                                <a href="#" id="pancake-resumelink">
+                                    <img id="pancake-img" src="https://img.icons8.com/cotton/64/000000/pancakes.png" />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" id="taco-resumelink">
+                                    <img id="taco-img" src="https://img.icons8.com/windows/64/000000/taco.png" />
+                                </a>
+                            </div>
+                            <div>
+                                <p class="blue-color" hidden>
+                                    Come on! Please, choose a flavour!
+                                </p>
+                            </div> -->
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm text-center">
+                                    <a id="pdf-link" href="../docs/en/resume.pdf">
+                                        <img id="pdf" src="https://img.icons8.com/doodle/48/000000/pdf--v3.png" />
+                                    </a>
+                                </div>
+                                <div class="col-sm text-center">
+                                    <a id="html-link" href="../docs/en/resume.html">
+                                        <img id="html" src="https://img.icons8.com/doodle/48/000000/code-file.png" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm text-center">
+                                    <span class="blue-color">PDF</span>
+                                </div>
+                                <div class="col-sm text-center">
+                                    <span class="blue-color">HTML</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>
+                    <a href="https://getbootstrap.com/" class="blue-color">ivanfshz.github.io</a> &reg; 2020.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('.es').click(function () {
+                    $(".en").removeClass("blue-color");
+                    $(".es").addClass("blue-color");
+
+                    // $(this).addClass("blue-color");
+                    // $("#pdf-link").attr('href', "../docs/es/resume.pdf");
+                    // $("#html-link").attr('href', "../docs/es/resume.html");
+                    return false;
+                });
+            });
+
+            $(function () {
+                $('.en').click(function () {
+                    $(".es").removeClass("blue-color");
+                    $(".en").addClass("blue-color");
+                    // $("#en").addClass("blue-color");
+                    // $("#pdf-link").attr('href', "../docs/en/resume.pdf");
+                    // $("#html-link").attr('href', "../docs/en/resume.html");
+                    return false;
+                });
+            });
+
+            // $(function () {
+            //     $('#pancake-resumelink').click(function () {
+            //         $("#pancake-img").attr('src', "https://img.icons8.com/cotton/64/000000/pancakes.png");
+            //         $("#taco-img").attr('src', "https://img.icons8.com/windows/64/000000/taco.png");
+            //         // $("#flavour").val("pancake");
+            //         return false;
+            //     });
+            // });
+
+            // $(function () {
+            //     $('#taco-resumelink').click(function () {
+            //         $("#taco-img").attr('src', "https://img.icons8.com/cute-clipart/64/000000/taco.png");
+            //         $("#pancake-img").attr('src', "https://img.icons8.com/pastel-glyph/64/000000/pancakes.png");
+            //         $("#pdf-link").attr('href', "../docs/es/resume.pdf");
+            //         $("#html-link").attr('href', "../docs/es/resume.html");
+            //         // $("#flavour").val("taco");
+            //         return false;
+            //     });
+            // });
+
+            // $(function () {
+            //     $('#pdf').click(function () {
+            //         console.log($("#flavour").val());
+            //         if ($("#flavour").val() == "taco") {
+            //             $(this).parent().attr('href', "../docs/es/resume.pdf");
+            //             return false;
+            //         }
+            //     });
+            // });
+
+            // $(function () {
+            //     $('#html').click(function () {
+            //         console.log($("#flavour").val());
+            //         if ($("#flavour").val() == "taco") {
+            //             $(this).parent().attr('href', ".../docs/es/resume.html");
+            //             return false;
+            //         }
+            //     });
+            // });
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
