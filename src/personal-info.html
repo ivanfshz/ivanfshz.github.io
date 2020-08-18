@@ -52,7 +52,7 @@
                         <a href="#" data-toggle="modal" data-target="#command" class="blue-color">
                             <img src="https://img.icons8.com/doodle/96/000000/console--v2.png" />
                             <br /> <br />
-                            <span>curl | wget</span>
+                            <span>curl | wget | Httpie</span>
                         </a>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                                 <div class="col-sm text-center">
                                     <a id="swagger-link" href="/docs/api/swagger.json" target="_blank"
                                         class="blue-color">
-                                        <img src="../images/swagger.png" class="img-api"/>
+                                        <img src="../images/swagger.png" class="img-api" />
                                         <br />
                                         <span class="blue-color">Swagger</span>
                                     </a>
@@ -153,7 +153,8 @@
                                 <div class="col-sm text-center">
                                     <a id="openapi-link" href="/docs/api/openapi.json" target="_blank"
                                         class="blue-color">
-                                        <img src="https://img.icons8.com/cotton/64/000000/code-file-1.png" class="img-api"/>
+                                        <img src="https://img.icons8.com/cotton/64/000000/code-file-1.png"
+                                            class="img-api" />
                                         <br />
                                         <span class="blue-color">OpenAPI</span>
                                     </a>
@@ -161,15 +162,15 @@
                                 <div class="col-sm text-center">
                                     <a id="postman-link" href="../docs/api/postman.json" target="_blank"
                                         class="blue-color">
-                                        <img src="../images/postman.png" class="img-api"/>
+                                        <img src="../images/postman.png" class="img-api" />
                                         <br />
                                         <span class="blue-color">Postman</span>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
@@ -202,6 +203,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link es" id="wget" href="#">wget</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">|</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link on" id="httpie" href="#">Httpie</a>
+                                </li>
                                 </li>
                             </ul>
                         </div>
@@ -209,13 +216,13 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <textarea rows="4" class="form-control command">curl -i -H 'Accept: application/json' -H 'Content-Type: application/json' --data 'format=pdf' -X GET http://ivanfshz.io/resume"</textarea>
+                                        <textarea rows="4" class="form-control command">curl --request GET \n \--url 'http://api.ivanfshz.io/v1/resume?format=pdf' \n \--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe' \--header 'cache-control: no-cache'</textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
@@ -240,6 +247,7 @@
                 $('.es').click(function () {
                     $(".es").css('color', '#53CDE4');
                     $(".en").css('color', '#666');
+                    $(".on").css('color', '#666');
 
                     $("#pdf-link").attr('href', "../docs/es/resume.pdf");
                     $("#html-link").attr('href', "../docs/es/resume.html");
@@ -255,12 +263,22 @@
                 $('.en').click(function () {
                     $(".en").css('color', '#53CDE4');
                     $(".es").css('color', '#666');
+                    $(".on").css('color', '#666');
                     $("#pdf-link").attr('href', "../docs/en/resume.pdf");
                     $("#html-link").attr('href', "../docs/en/resume.html");
 
                     $("#swagger-link").attr('href', "../docs/es/swagger.json");
                     $("#openapi-link").attr('href', "../docs/es/openapi.json");
                     $("#postman-link").attr('href', "../docs/api/postman.json");
+                    return false;
+                });
+            });
+
+            $(function () {
+                $('.on').click(function () {
+                    $(".on").css('color', '#53CDE4');
+                    $(".es").css('color', '#666');
+                    $(".en").css('color', '#666');
                     return false;
                 });
             });
@@ -274,13 +292,29 @@
 
             $(function () {
                 $('#curl').click(function () {
-                    $("textarea").val("curl -i -H 'Accept: application/json' -H 'Content-Type: application/json' --data 'format=pdf' -X GET http://ivanfshz.io/resume");
+                    $("textarea").val("curl --request GET"
+                    + " \n \\--url 'http://api.ivanfshz.io/v1/resume?format=pdf'"
+                    + " \n \\--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe'"
+                    + " \n \\--header 'cache-control: no-cache'");
                 });
             });
 
             $(function () {
                 $('#wget').click(function () {
-                    $("textarea").val("wget --header='Content-Type: text/json' http://ivanfshz.io/resume/ -O resume.pdf");
+                    $("textarea").val("wget --quiet"
+                    + " \n \\--method GET "
+                    + " \n \\--header 'cache-control: no-cache'"
+                    + " \n \\--header 'Postman-Token: f65dca65-173c-4fe4-a838-41155e50f984'"
+                    + " \n \\--output-document "
+                    + " \n \\- 'http://api.ivanfshz.io/v1/resume?format=pdf'");
+                });
+            });
+
+            $(function () {
+                $('#httpie').click(function () {
+                    $("textarea").val("http GET 'http://api.ivanfshz.io/v1/resume?format=pdf'"
+                    + " \n \\Postman-Token:34a515ca-78f2-4aae-bb0b-529a8b32c4ee"
+                    + " \n \\cache-control:no-cache");
                 });
             });
 

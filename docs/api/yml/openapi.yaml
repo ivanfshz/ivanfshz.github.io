@@ -1,0 +1,215 @@
+openapi: 3.0.0
+info:
+  title: Resume API
+  description: 'Resume API [ivanfshz.github.io](https://ivanfshz.github.io).'
+  version: 0.1.9
+servers:
+  - url: 'http://api.ivanfshz.io/v1'
+    description: Production server
+  - url: 'http://staging-api.ivanfshz.io'
+    description: Internal staging server for testing
+paths:
+  /resume:
+    get:
+      summary: returns a resume in the requested format.
+      tags:
+        - resume
+      parameters:
+        - name: format
+          in: query
+          required: true
+          description: format file.
+          schema:
+            type: string
+            enum:
+              - json
+              - pdf
+              - html
+              - txt
+      responses:
+        '200':
+          description: response resume resource in the rquested format.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resume'
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+            text/html:
+              schema:
+                type: string
+                format: binary
+            text/plain:
+              schema:
+                type: string
+                format: binary
+components:
+  schemas:
+    Resume:
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        mobile:
+          type: string
+        linkedIn:
+          type: string
+        site:
+          type: string
+        summary:
+          type: string
+        workExperience:
+          $ref: '#/components/schemas/WorkExperience'
+        degrees:
+          type: array
+          items:
+            $ref: '#/components/schemas/Degree'
+        lenguages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Language'
+        courses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Course'
+        technologies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tech'
+        iceCreams:
+          type: array
+          items:
+            $ref: '#/components/schemas/IceCream'
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/Skill'
+    WorkExperience:
+      properties:
+        experiences:
+          type: array
+          items:
+            $ref: '#/components/schemas/Experience'
+    Experience:
+      properties:
+        period:
+           $ref: '#/components/schemas/Period'
+        title:
+          type: string
+        description:
+          type: string
+        location:
+          $ref: '#/components/schemas/Location'
+        milestones:
+          type: array
+          items:
+            $ref: '#/components/schemas/Milestone'
+    Period:
+      properties:
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        isPresent:
+          type: boolean
+    Location:
+      properties:
+        city:
+          type: string
+        country:
+          type: string
+    Milestone:
+      properties:
+        description:
+          type: string
+    Degree:
+      properties:
+        title:
+          type: string
+        institution:
+          type: string
+        period:
+          $ref: '#/components/schemas/Period'
+        location:
+          $ref: '#/components/schemas/Location'
+    Language:
+      properties:
+        name:
+          type: string
+        isNativeSpeaker:
+          type: boolean
+        level:
+          type: string
+          enum:
+              - basic
+              - good command
+              - 5 stars
+    Course:
+      properties:
+        name:
+          type: string
+        year:
+          type: string
+        hasCertification:
+          type: boolean
+        status:
+          type: string
+          enum:
+            - completed
+            - in_progress
+            - suspended
+            - incompleted
+        institution:
+          type: string
+    Tech:
+      properties:
+        type:
+          type: string
+          enum:
+            - backend
+            - frontend
+            - cloud
+            - data bases
+        name:
+          type: string
+        level:
+          type: string
+          enum:
+              - mhe
+              - so_so
+              - five_stars
+              - like_a_big_boss_bud
+    IceCream:
+      properties:
+        methodology:
+          type: string
+        type:
+          type: string
+          enum:
+            - agile
+            - old_but_gold
+            - traditional
+        level:
+          type: string
+          enum:
+            - experimental
+            - bro_i_grew_up_before_this
+            - pray_for_agile
+            - whats_agile
+    Skill:
+      properties:
+        type:
+          type: string
+          enum:
+            - leadership
+            - team player
+            - soft
+            - managament
+            - other
+        name:
+          type: string
