@@ -1,0 +1,138 @@
+{
+	"info": {
+	  "name": "Resume API",
+	  "_postman_id": "348e5f9b-a351-40df-ad11-f7c1c69f0b0e",
+	  "description": "Resume API [ivanfshz.github.io](https://ivanfshz.github.io).",
+	  "schema": "https://schema.getpostman.com/json/collection/v2.0.0/"
+	},
+	"item": [
+	  {
+		"name": "resume",
+		"item": [
+		  {
+			"id": "7c8489f2-bb78-476a-9cb2-95794e6936c5",
+			"name": "getByFormat.",
+			"request": {
+			  "url": {
+				"protocol": "https",
+				"host": "api.ivanfshz.io",
+				"path": [
+				  "{version}}",
+				  "resume",
+				  ""
+				],
+				"query": [
+				  {
+					"key": "format",
+					"value": "json",
+					"description": "format file.",
+					"disabled": false
+				  }
+				]
+			  },
+			  "method": "GET",
+			  "header": [
+				{
+				  "key": "Accept",
+				  "value": "application/json",
+				  "disabled": false
+				}
+			  ],
+			  "body": {
+				"mode": "raw",
+				"disabled": false
+			  },
+			  "description": "returns a resume in the requested format."
+			},
+			"response": [
+			  {
+				"header": [
+				  {
+					"key": "Content-Type",
+					"value": "application/json",
+					"disabled": false
+				  }
+				],
+				"body": "{\r\n  \"name\": \"name17\",\r\n  \"email\": \"email17\",\r\n  \"mobile\": \"mobile17\",\r\n  \"location\": \"location17\",\r\n  \"site\": \"site17\",\r\n  \"summary\": \"summary17\",\r\n  \"workExperience\": {\r\n    \"experiences\": [\r\n      {\r\n        \"period\": {\r\n          \"startDate\": \"04-09-2020\",\r\n          \"endDate\": \"04-09-2020\",\r\n          \"isPresent\": false\r\n        },\r\n        \"title\": \"title17\",\r\n        \"description\": \"description17\",\r\n        \"location\": {\r\n          \"city\": \"city17\",\r\n          \"country\": \"country17\"\r\n        },\r\n        \"milestones\": [\r\n          {\r\n            \"description\": \"description17\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"education\": [\r\n    {\r\n      \"title\": \"title17\",\r\n      \"institution\": \"institution17\",\r\n      \"period\": {\r\n        \"startDate\": \"04-09-2020\",\r\n        \"endDate\": \"04-09-2020\",\r\n        \"isPresent\": false\r\n      },\r\n      \"location\": {\r\n        \"city\": \"city17\",\r\n        \"country\": \"country17\"\r\n      }\r\n    }\r\n  ],\r\n  \"lenguages\": [\r\n    {\r\n      \"name\": \"name17\",\r\n      \"languageLevel\": \"basic\"\r\n    }\r\n  ],\r\n  \"courses\": [\r\n    {\r\n      \"name\": \"name17\",\r\n      \"year\": \"year17\",\r\n      \"hasCertification\": false,\r\n      \"status\": \"completed\",\r\n      \"institution\": \"institution17\"\r\n    }\r\n  ],\r\n  \"technologies\": [\r\n    {\r\n      \"type\": \"backend\",\r\n      \"name\": \"name17\",\r\n      \"techLevel\": \"mhe\"\r\n    }\r\n  ],\r\n  \"skills\": [\r\n    {\r\n      \"name\": \"name17\"\r\n    }\r\n  ]\r\n}",
+				"status": "response resume resource in a format.",
+				"code": 200,
+				"name": "Response_200",
+				"id": "21993fe0-2f3f-477a-b97a-38d5df381849"
+			  },
+			  {
+				"header": [
+				  {
+					"key": "Content-Type",
+					"value": "application/json",
+					"disabled": false
+				  }
+				],
+				"body": "{\r\n  \"message\": \"message17\",\r\n  \"code\": \"code17\"\r\n}",
+				"status": "Bad request",
+				"code": 400,
+				"name": "Response_400",
+				"id": "a109fb18-c065-4f61-b2da-9762d5b7065f"
+			  },
+			  {
+				"header": [
+				  {
+					"key": "Content-Type",
+					"value": "application/json",
+					"disabled": false
+				  }
+				],
+				"body": "{\r\n  \"message\": \"message17\",\r\n  \"code\": \"code17\"\r\n}",
+				"status": "Unauthorized",
+				"code": 401,
+				"name": "Response_401",
+				"id": "6cd94572-4a53-4362-a350-8e5f0edf5501"
+			  },
+			  {
+				"header": [
+				  {
+					"key": "Content-Type",
+					"value": "application/json",
+					"disabled": false
+				  }
+				],
+				"body": "{\r\n  \"message\": \"message17\",\r\n  \"code\": \"code17\"\r\n}",
+				"status": "Not found",
+				"code": 404,
+				"name": "Response_404",
+				"id": "0a1ebb9c-c9bf-4d7c-9ea3-0168530862e6"
+			  },
+			  {
+				"header": [
+				  {
+					"key": "Content-Type",
+					"value": "application/json",
+					"disabled": false
+				  }
+				],
+				"body": "{\r\n  \"message\": \"message17\",\r\n  \"code\": \"code17\"\r\n}",
+				"status": "Unauthorized",
+				"code": 503,
+				"name": "Response_503",
+				"id": "6c6a57ba-3f16-4443-8478-7f0647d9e3ad"
+			  },
+			  {
+				"header": [
+				  {
+					"key": "Content-Type",
+					"value": "application/json",
+					"disabled": false
+				  }
+				],
+				"body": "{\r\n  \"message\": \"message17\",\r\n  \"code\": \"code17\"\r\n}",
+				"status": "Unexpected error",
+				"code": 0,
+				"name": "Response_0",
+				"id": "64c84897-e5e0-4a19-821a-9c8a11ed0430"
+			  }
+			]
+		  }
+		]
+	  }
+	],
+	"variable": []
+  }

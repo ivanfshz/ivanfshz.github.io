@@ -1,327 +1,391 @@
 {
     "openapi": "3.0.0",
     "info": {
-      "title": "Resume API",
-      "description": "Resume API [ivanfshz.github.io](https://ivanfshz.github.io).",
-      "version": "0.1.9"
+        "title": "Resume API",
+        "description": "Resume API [ivanfshz.github.io](https://ivanfshz.github.io).",
+        "contact": {
+            "name": "Ivan Flores",
+            "url": "https://ivanfshz.github.io",
+            "email": "ivanfshz@gmail.com"
+        },
+        "version": "0.1.9"
     },
     "servers": [
-      {
-        "url": "http://api.ivanfshz.io/v1",
-        "description": "Production server"
-      },
-      {
-        "url": "http://staging-api.ivanfshz.io",
-        "description": "Internal staging server for testing"
-      }
+        {
+            "url": "https://api.ivanfshz.io/{version}/resume"
+        }
+    ],
+    "tags": [
+        {
+            "name": "resume"
+        }
     ],
     "paths": {
-      "/resume": {
-        "get": {
-          "summary": "returns a resume in the requested format.",
-          "tags": [
-            "resume"
-          ],
-          "parameters": [
-            {
-              "name": "format",
-              "in": "query",
-              "required": true,
-              "description": "format file.",
-              "schema": {
-                "type": "string",
-                "enum": [
-                  "json",
-                  "pdf",
-                  "html",
-                  "txt"
-                ]
-              }
+        "/": {
+            "get": {
+                "tags": [
+                    "resume"
+                ],
+                "summary": "GET - Resume - PDF | HTML | TXT.",
+                "description": "returns a resume in the requested format.",
+                "operationId": "getByFormat.",
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "format file.",
+                        "required": true,
+                        "style": "form",
+                        "explode": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/Format"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "response resume resource in a format.",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Resume"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "503": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
             }
-          ],
-          "responses": {
-            "200": {
-              "description": "response resume resource in a format.",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Resume"
-                  }
-                },
-                "application/pdf": {
-                  "schema": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                },
-                "text/html": {
-                  "schema": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                },
-                "text/plain": {
-                  "schema": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
         }
-      }
     },
     "components": {
-      "schemas": {
-        "Resume": {
-          "properties": {
-            "name": {
-              "type": "string"
+        "schemas": {
+            "Resume": {
+                "title": "Resume",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "mobile": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "site": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "workExperience": {
+                        "$ref": "#/components/schemas/WorkExperience"
+                    },
+                    "education": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Education"
+                        },
+                        "description": ""
+                    },
+                    "lenguages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Language"
+                        },
+                        "description": ""
+                    },
+                    "courses": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Course"
+                        },
+                        "description": ""
+                    },
+                    "technologies": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tech"
+                        },
+                        "description": ""
+                    },
+                    "skills": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Skill"
+                        },
+                        "description": ""
+                    }
+                }
             },
-            "email": {
-              "type": "string"
+            "WorkExperience": {
+                "title": "WorkExperience",
+                "type": "object",
+                "properties": {
+                    "experiences": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Experience"
+                        },
+                        "description": ""
+                    }
+                }
             },
-            "mobile": {
-              "type": "string"
+            "Experience": {
+                "title": "Experience",
+                "type": "object",
+                "properties": {
+                    "period": {
+                        "$ref": "#/components/schemas/Period"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "$ref": "#/components/schemas/Location"
+                    },
+                    "milestones": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Milestone"
+                        },
+                        "description": ""
+                    }
+                }
             },
-            "site": {
-              "type": "string"
+            "Period": {
+                "title": "Period",
+                "type": "object",
+                "properties": {
+                    "startDate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "isPresent": {
+                        "type": "boolean"
+                    }
+                }
             },
-            "summary": {
-              "type": "string"
+            "Location": {
+                "title": "Location",
+                "type": "object",
+                "properties": {
+                    "city": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    }
+                }
             },
-            "workExperience": {
-              "$ref": "#/components/schemas/WorkExperience"
+            "Milestone": {
+                "title": "Milestone",
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string"
+                    }
+                }
             },
-            "degrees": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Degree"
-              }
+            "Education": {
+                "title": "Education",
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "institution": {
+                        "type": "string"
+                    },
+                    "period": {
+                        "$ref": "#/components/schemas/Period"
+                    },
+                    "location": {
+                        "$ref": "#/components/schemas/Location"
+                    }
+                }
             },
-            "lenguages": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Language"
-              }
+            "Language": {
+                "title": "Language",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "languageLevel": {
+                        "$ref": "#/components/schemas/LangugeLevel"
+                    }
+                }
             },
-            "courses": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Course"
-              }
+            "Course": {
+                "title": "Course",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "year": {
+                        "type": "string"
+                    },
+                    "hasCertification": {
+                        "type": "boolean"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/Status"
+                    },
+                    "institution": {
+                        "type": "string"
+                    }
+                }
             },
-            "technologies": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Tech"
-              }
+            "Tech": {
+                "title": "Tech",
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/Type"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "techLevel": {
+                        "$ref": "#/components/schemas/TechnicalLevel"
+                    }
+                }
             },
-            "iceCreams": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/IceCream"
-              }
+            "Skill": {
+                "title": "Skill",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
             },
-            "skills": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Skill"
-              }
+            "LangugeLevel": {
+                "title": "LangugeLevel",
+                "enum": [
+                    "basic",
+                    "good_command",
+                    "five_stars",
+                    "native_speaker"
+                ],
+                "type": "string"
+            },
+            "TechnicalLevel": {
+                "title": "TechnicalLevel",
+                "enum": [
+                    "mhe",
+                    "so_so",
+                    "five_stars",
+                    "like_a_big_boss_bud"
+                ],
+                "type": "string"
+            },
+            "Status": {
+                "title": "Status",
+                "enum": [
+                    "completed",
+                    "in_progress",
+                    "suspended",
+                    "incompleted"
+                ],
+                "type": "string"
+            },
+            "Type": {
+                "title": "Type",
+                "enum": [
+                    "backend",
+                    "frontend",
+                    "cloud",
+                    "db"
+                ],
+                "type": "string"
+            },
+            "Error": {
+                "title": "Error",
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Format": {
+                "title": "Format",
+                "enum": [
+                    "json",
+                    "pdf",
+                    "html",
+                    "txt"
+                ],
+                "type": "string"
             }
-          }
-        },
-        "WorkExperience": {
-          "properties": {
-            "experiences": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Experience"
-              }
-            }
-          }
-        },
-        "Experience": {
-          "properties": {
-            "period": {
-              "$ref": "#/components/schemas/Period"
-            },
-            "title": {
-              "type": "string"
-            },
-            "description": {
-              "type": "string"
-            },
-            "location": {
-              "$ref": "#/components/schemas/Location"
-            },
-            "milestones": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Milestone"
-              }
-            }
-          }
-        },
-        "Period": {
-          "properties": {
-            "startDate": {
-              "type": "string",
-              "format": "date"
-            },
-            "endDate": {
-              "type": "string",
-              "format": "date"
-            },
-            "isPresent": {
-              "type": "boolean"
-            }
-          }
-        },
-        "Location": {
-          "properties": {
-            "city": {
-              "type": "string"
-            },
-            "country": {
-              "type": "string"
-            }
-          }
-        },
-        "Milestone": {
-          "properties": {
-            "description": {
-              "type": "string"
-            }
-          }
-        },
-        "Degree": {
-          "properties": {
-            "title": {
-              "type": "string"
-            },
-            "institution": {
-              "type": "string"
-            },
-            "period": {
-              "$ref": "#/components/schemas/Period"
-            },
-            "location": {
-              "$ref": "#/components/schemas/Location"
-            }
-          }
-        },
-        "Language": {
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "isNativeSpeaker": {
-              "type": "boolean"
-            },
-            "level": {
-              "type": "string",
-              "enum": [
-                "basic",
-                "good command",
-                "5 stars"
-              ]
-            }
-          }
-        },
-        "Course": {
-          "properties": {
-            "name": {
-              "type": "string"
-            },
-            "year": {
-              "type": "string"
-            },
-            "hasCertification": {
-              "type": "boolean"
-            },
-            "status": {
-              "type": "string",
-              "enum": [
-                "completed",
-                "in_progress",
-                "suspended",
-                "incompleted"
-              ]
-            },
-            "institution": {
-              "type": "string"
-            }
-          }
-        },
-        "Tech": {
-          "properties": {
-            "type": {
-              "type": "string",
-              "enum": [
-                "backend",
-                "frontend",
-                "cloud",
-                "data bases"
-              ]
-            },
-            "name": {
-              "type": "string"
-            },
-            "level": {
-              "type": "string",
-              "enum": [
-                "mhe",
-                "so_so",
-                "five_stars",
-                "like_a_big_boss_bud"
-              ]
-            }
-          }
-        },
-        "IceCream": {
-          "properties": {
-            "flavour": {
-              "type": "string"
-            },
-            "base": {
-              "type": "string",
-              "enum": [
-                "agile",
-                "old_but_gold",
-                "traditional",
-                "progre"
-              ]
-            },
-            "topping": {
-              "type": "string",
-              "enum": [
-                "experimental",
-                "bro_i_grew_up_with_unix",
-                "pray_for_agile",
-                "whats_agile"
-              ]
-            }
-          }
-        },
-        "Skill": {
-          "properties": {
-            "type": {
-              "type": "string",
-              "enum": [
-                "leadership",
-                "team player",
-                "soft",
-                "managament",
-                "other"
-              ]
-            },
-            "name": {
-              "type": "string"
-            }
-          }
         }
-      }
     }
-  }
+}

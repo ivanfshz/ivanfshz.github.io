@@ -90,14 +90,14 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-sm text-center">
-                                    <a id="pdf-link" href="../docs/en/resume.pdf" target="_blank" class="blue-color">
+                                    <a id="pdf-link" href="../docs/resume/en/resume.pdf" target="_blank" class="blue-color">
                                         <img id="pdf" src="https://img.icons8.com/doodle/48/000000/pdf--v3.png" />
                                         <br />
                                         <span class="blue-color">PDF</span>
                                     </a>
                                 </div>
                                 <div class="col-sm text-center">
-                                    <a id="html-link" href="../docs/en/resume.html" target="_blank" class="blue-color">
+                                    <a id="html-link" href="../docs/resume/en/resume.html" target="_blank" class="blue-color">
                                         <img id="html" src="https://img.icons8.com/doodle/48/000000/code-file.png" />
                                         <br />
                                         <span class="blue-color">HTML</span>
@@ -143,7 +143,7 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-sm text-center">
-                                    <a id="swagger-link" href="/docs/api/swagger.json" target="_blank"
+                                    <a id="swagger-link" href="../docs/api/json/swagger.json" target="_blank"
                                         class="blue-color">
                                         <img src="../images/swagger.png" class="img-api" />
                                         <br />
@@ -151,7 +151,7 @@
                                     </a>
                                 </div>
                                 <div class="col-sm text-center">
-                                    <a id="openapi-link" href="/docs/api/openapi.json" target="_blank"
+                                    <a id="openapi-link" href="../docs/api/json/openapi.json" target="_blank"
                                         class="blue-color">
                                         <img src="https://img.icons8.com/cotton/64/000000/code-file-1.png"
                                             class="img-api" />
@@ -160,7 +160,7 @@
                                     </a>
                                 </div>
                                 <div class="col-sm text-center">
-                                    <a id="postman-link" href="../docs/api/postman.json" target="_blank"
+                                    <a id="postman-link" href="../docs/api/json/postman.json" target="_blank"
                                         class="blue-color">
                                         <img src="../images/postman.png" class="img-api" />
                                         <br />
@@ -216,7 +216,7 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <textarea rows="4" class="form-control command">curl --request GET \n \--url 'http://api.ivanfshz.io/v1/resume?format=pdf' \n \--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe' \--header 'cache-control: no-cache'</textarea>
+                                        <textarea rows="4" class="form-control command">curl --request GET \--url 'http://api.ivanfshz.io/v1/resume?format=pdf' \--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe' \--header 'cache-control: no-cache'</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -249,12 +249,11 @@
                     $(".en").css('color', '#666');
                     $(".on").css('color', '#666');
 
-                    $("#pdf-link").attr('href', "../docs/es/resume.pdf");
-                    $("#html-link").attr('href', "../docs/es/resume.html");
+                    $("#pdf-link").attr('href', "../docs/es/resume/resume.pdf");
+                    $("#html-link").attr('href', "../docs/es/resume/resume.html");
 
-                    $("#swagger-link").attr('href', "../docs/es/swagger.yml");
-                    $("#openapi-link").attr('href', "../docs/es/openapi.yml");
-                    $("#postman-link").attr('href', "../docs/api/postman.yml");
+                    $("#swagger-link").attr('href', "../docs/api/yml/swagger.yml");
+                    $("#openapi-link").attr('href', "../docs/api/yml/openapi.yml");
                     return false;
                 });
             });
@@ -264,12 +263,12 @@
                     $(".en").css('color', '#53CDE4');
                     $(".es").css('color', '#666');
                     $(".on").css('color', '#666');
-                    $("#pdf-link").attr('href', "../docs/en/resume.pdf");
-                    $("#html-link").attr('href', "../docs/en/resume.html");
+                    $("#pdf-link").attr('href', "../docs/resume/en/resume.pdf");
+                    $("#html-link").attr('href', "../docs/resume/en/resume.html");
 
-                    $("#swagger-link").attr('href', "../docs/es/swagger.json");
-                    $("#openapi-link").attr('href', "../docs/es/openapi.json");
-                    $("#postman-link").attr('href', "../docs/api/postman.json");
+                    $("#swagger-link").attr('href', "../docs/api/json/swagger.json");
+                    $("#openapi-link").attr('href', "../docs/api/json/openapi.json");
+                    $("#postman-link").attr('href', "../docs/api/json/postman.json");
                     return false;
                 });
             });
