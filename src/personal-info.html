@@ -35,24 +35,24 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm text-center">
-                        <a href="#" data-toggle="modal" data-target="#resume" class="blue-color">
-                            <img src="https://img.icons8.com/doodle/96/000000/documents.png"/>
+                        <a href="#" data-toggle="modal" data-target="#docs" class="blue-color">
+                            <img src="https://img.icons8.com/doodle/96/000000/documents.png" />
                             <br /> <br />
-                            <span >PDF | HTML</span>
+                            <span>pdf | html</span>
                         </a>
                     </div>
                     <div class="col-sm text-center">
-                        <a href="#" class="blue-color">
-                            <img src="https://img.icons8.com/doodle/96/000000/api.png"/>
+                        <a href="#" data-toggle="modal" data-target="#api" class="blue-color">
+                            <img src="https://img.icons8.com/doodle/96/000000/api.png" />
                             <br /> <br />
-                            <span >swagger | openapi</span>
+                            <span>yml | json</span>
                         </a>
                     </div>
                     <div class="col-sm text-center">
-                        <a href="#" alt="resume | command line" class="blue-color">
-                            <img src="https://img.icons8.com/doodle/96/000000/console--v2.png"/>
+                        <a href="#" data-toggle="modal" data-target="#command" class="blue-color">
+                            <img src="https://img.icons8.com/doodle/96/000000/console--v2.png" />
                             <br /> <br />
-                            <span >curl | wget</span>
+                            <span>curl | wget</span>
                         </a>
                     </div>
                 </div>
@@ -60,7 +60,9 @@
         </main>
 
         <div class="container">
-            <div class="modal fade" id="resume" tabindex="-1" role="dialog" aria-hidden="true">
+
+            <!-- docs modal -->
+            <div class="modal fade" id="docs" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -72,33 +74,32 @@
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <ul class="nav justify-content-center">
                                 <li class="nav-item">
-                                  <a class="nav-link blue-color en" href="#">EN</a>
+                                    <a class="nav-link blue-color en" href="#">EN</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">|</a>
-                                  </li>
+                                </li>
                                 <li class="nav-item">
-                                  <a class="nav-link es" href="#">ES</a>
+                                    <a class="nav-link es" href="#">ES</a>
                                 </li>
                                 </li>
-                              </ul>
+                            </ul>
                         </div>
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-sm text-center">
                                     <a id="pdf-link" href="../docs/en/resume.pdf" target="_blank" class="blue-color">
                                         <img id="pdf" src="https://img.icons8.com/doodle/48/000000/pdf--v3.png" />
-                                        <br/>
+                                        <br />
                                         <span class="blue-color">PDF</span>
                                     </a>
                                 </div>
                                 <div class="col-sm text-center">
                                     <a id="html-link" href="../docs/en/resume.html" target="_blank" class="blue-color">
                                         <img id="html" src="https://img.icons8.com/doodle/48/000000/code-file.png" />
-                                        <br/>
+                                        <br />
                                         <span class="blue-color">HTML</span>
                                     </a>
                                 </div>
@@ -110,6 +111,118 @@
                     </div>
                 </div>
             </div>
+            <!-- end docs modal -->
+
+            <!-- api modal -->
+            <div class="modal fade" id="api" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h5 class="modal-title blue-color">Resume</h5>
+
+                            <button type="button" class="close blue-color" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link blue-color en" href="#">json</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">|</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link es" href="#">yml</a>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm text-center">
+                                    <a id="swagger-link" href="/docs/api/swagger.json" target="_blank"
+                                        class="blue-color">
+                                        <img src="../images/swagger.png" />
+                                        <br />
+                                        <span class="blue-color">Swagger</span>
+                                    </a>
+                                </div>
+                                <div class="col-sm text-center">
+                                    <a id="openapi-link" href="/docs/api/openapi.json" target="_blank"
+                                        class="blue-color">
+                                        <img src="https://img.icons8.com/cotton/64/000000/code-file-1.png" />
+                                        <br />
+                                        <span class="blue-color">OpenAPI</span>
+                                    </a>
+                                </div>
+                                <div class="col-sm text-center">
+                                    <a id="postman-link" href="../docs/api/postman.json" target="_blank"
+                                        class="blue-color">
+                                        <img src="../images/postman.png" />
+                                        <br />
+                                        <span class="blue-color">Postman</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end api modal -->
+
+            <!-- command modal -->
+            <div class="modal fade" id="command" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h5 class="modal-title blue-color">Resume</h5>
+
+                            <button type="button" class="close blue-color" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <ul class="nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link blue-color en" id="curl" href="#">curl</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">|</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link es" id="wget" href="#">wget</a>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <textarea rows="4" class="form-control command">curl -i -H 'Accept: application/json' -H 'Content-Type: application/json' --data 'format=pdf' -X GET http://ivanfshz.io/resume"</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end command modal -->
         </div>
 
         <footer class="mastfoot mt-auto">
@@ -127,8 +240,13 @@
                 $('.es').click(function () {
                     $(".es").css('color', '#53CDE4');
                     $(".en").css('color', '#666');
+
                     $("#pdf-link").attr('href', "../docs/es/resume.pdf");
                     $("#html-link").attr('href', "../docs/es/resume.html");
+
+                    $("#swagger-link").attr('href', "../docs/es/swagger.yml");
+                    $("#openapi-link").attr('href', "../docs/es/openapi.yml");
+                    $("#postman-link").attr('href', "../docs/api/postman.yml");
                     return false;
                 });
             });
@@ -139,7 +257,30 @@
                     $(".es").css('color', '#666');
                     $("#pdf-link").attr('href', "../docs/en/resume.pdf");
                     $("#html-link").attr('href', "../docs/en/resume.html");
+
+                    $("#swagger-link").attr('href', "../docs/es/swagger.json");
+                    $("#openapi-link").attr('href', "../docs/es/openapi.json");
+                    $("#postman-link").attr('href', "../docs/api/postman.json");
                     return false;
+                });
+            });
+
+            $(function () {
+                $('.command').click(function () {
+                    $("textarea").select();
+                    document.execCommand('copy');
+                });
+            });
+
+            $(function () {
+                $('#curl').click(function () {
+                    $("textarea").val("curl -i -H 'Accept: application/json' -H 'Content-Type: application/json' --data 'format=pdf' -X GET http://ivanfshz.io/resume");
+                });
+            });
+
+            $(function () {
+                $('#wget').click(function () {
+                    $("textarea").val("wget --header='Content-Type: text/json' http://ivanfshz.io/resume/ -O resume.pdf");
                 });
             });
 

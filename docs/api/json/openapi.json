@@ -1,0 +1,90 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Resume API",
+      "description": "Resume API [ivanfshz.github.io](https://ivanfshz.github.io).",
+      "version": "0.1.9"
+    },
+    "servers": [
+      {
+        "url": "http://api.example.com/v1",
+        "description": "Production server"
+      },
+      {
+        "url": "http://staging-api.example.com",
+        "description": "Internal staging server for testing"
+      }
+    ],
+    "paths": {
+      "/resume": {
+        "get": {
+          "summary": "Returns a resume in the requested format.",
+          "parameters": [
+            {
+              "name": "format",
+              "in": "query",
+              "required": true,
+              "description": "Format file.",
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "docx",
+                  "doc",
+                  "pdf",
+                  "html",
+                  "json"
+                ]
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A PDF file",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "mobile": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "application/doc": {
+                  "schema": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "application/docx": {
+                  "schema": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "application/pdf": {
+                  "schema": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "application/html": {
+                  "schema": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
