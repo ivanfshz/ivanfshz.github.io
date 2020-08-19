@@ -92,7 +92,7 @@ components:
                     items:
                         $ref: "#/components/schemas/Educaton"
                     description: educational history
-                lenguages:
+                languages:
                     type: array
                     items:
                     $ref: "#/components/schemas/Lenguage"

@@ -190,7 +190,7 @@
                                             }
                                         }
                                     ],
-                                    "lenguages": [
+                                    "languages": [
                                         {
                                             "name": "spanish",
                                             "languageLevel": "native_speaker"
@@ -474,7 +474,7 @@
                         "$ref": "#/definitions/Education"
                     }
                 },
-                "lenguages": {
+                "languages": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Language"

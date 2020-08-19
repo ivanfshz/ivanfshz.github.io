@@ -90,7 +90,7 @@
 				]
 			}
 		],
-		"educaton": [{
+		"education": [{
 				"title": "B.E. Computer Engineering",
 				"institution": "UNAM MX",
 				"period": {
@@ -117,7 +117,7 @@
 				}
 			}
 		],
-		"lenguages": [{
+		"languages": [{
 				"name": "spanish",
 				"isNativeSpeaker": true,
 				"languageLevel": "five_stars"
