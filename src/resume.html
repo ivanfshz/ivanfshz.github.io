@@ -13,32 +13,27 @@
 </head>
 
 <body class="text-center">
-
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-
         <br />
         <br />
         <header class="masthead mb-auto">
             <div class="inner">
-                <div class="row">
-                    <div class="col-sm text-center">
-                        <a href="https://ivanfshz.github.io" class="blue-color">
-                            <b>IVAN FLORES</b>
-                        </a> |
-                        <span>Sr. Software Developer</span>
-                    </div>
-                </div>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="https://ivanfshz.github.io">Home</a>
+                    <a class="nav-link active" href="#">Resume</a>
+                    <a class="nav-link" href="https://ivanfshz.github.io/src/collaboration">Collaboration</a>
+                </nav>
             </div>
         </header>
 
         <table>
             <tr>
                 <td class="col-sm text-center">
-                    <span>Collaboration</span>
+                    <h5>Resume</h5>
                 </td>
             </tr>
         </table>
-        <br/><br/><br/>
+        <br /><br /><br />
 
         <main role="main" class="inner cover">
             <div class="container">
@@ -99,14 +94,16 @@
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-sm text-center">
-                                    <a id="pdf-link" href="../docs/resume/en/resume.pdf" target="_blank" class="blue-color">
+                                    <a id="pdf-link" href="../docs/resume/en/resume.pdf" target="_blank"
+                                        class="blue-color">
                                         <img id="pdf" src="https://img.icons8.com/doodle/48/000000/pdf--v3.png" />
                                         <br />
                                         <span class="blue-color">PDF</span>
                                     </a>
                                 </div>
                                 <div class="col-sm text-center">
-                                    <a id="html-link" href="../docs/resume/en/resume.html" target="_blank" class="blue-color">
+                                    <a id="html-link" href="../docs/resume/en/resume.html" target="_blank"
+                                        class="blue-color">
                                         <img id="html" src="https://img.icons8.com/doodle/48/000000/code-file.png" />
                                         <br />
                                         <span class="blue-color">HTML</span>
@@ -225,7 +222,8 @@
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <textarea rows="4" class="form-control command">curl --request GET \--url 'http://api.ivanfshz.io/v1/resume?format=pdf' \--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe' \--header 'cache-control: no-cache'</textarea>
+                                        <textarea rows="4"
+                                            class="form-control command">curl --request GET \--url 'http://api.ivanfshz.io/v1/resume?format=pdf' \--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe' \--header 'cache-control: no-cache'</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -301,28 +299,28 @@
             $(function () {
                 $('#curl').click(function () {
                     $("textarea").val("curl --request GET"
-                    + " \n \\--url 'http://api.ivanfshz.io/v1/resume?format=pdf'"
-                    + " \n \\--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe'"
-                    + " \n \\--header 'cache-control: no-cache'");
+                        + " \n \\--url 'http://api.ivanfshz.io/v1/resume?format=pdf'"
+                        + " \n \\--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe'"
+                        + " \n \\--header 'cache-control: no-cache'");
                 });
             });
 
             $(function () {
                 $('#wget').click(function () {
                     $("textarea").val("wget --quiet"
-                    + " \n \\--method GET "
-                    + " \n \\--header 'cache-control: no-cache'"
-                    + " \n \\--header 'Postman-Token: f65dca65-173c-4fe4-a838-41155e50f984'"
-                    + " \n \\--output-document "
-                    + " \n \\- 'http://api.ivanfshz.io/v1/resume?format=pdf'");
+                        + " \n \\--method GET "
+                        + " \n \\--header 'cache-control: no-cache'"
+                        + " \n \\--header 'Postman-Token: f65dca65-173c-4fe4-a838-41155e50f984'"
+                        + " \n \\--output-document "
+                        + " \n \\- 'http://api.ivanfshz.io/v1/resume?format=pdf'");
                 });
             });
 
             $(function () {
                 $('#httpie').click(function () {
                     $("textarea").val("http GET 'http://api.ivanfshz.io/v1/resume?format=pdf'"
-                    + " \n \\Postman-Token:34a515ca-78f2-4aae-bb0b-529a8b32c4ee"
-                    + " \n \\cache-control:no-cache");
+                        + " \n \\Postman-Token:34a515ca-78f2-4aae-bb0b-529a8b32c4ee"
+                        + " \n \\cache-control:no-cache");
                 });
             });
 

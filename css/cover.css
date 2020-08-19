@@ -56,7 +56,7 @@ body {
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: #53CDE4(255, 255, 255, .25);
 }
 
 .nav-masthead .nav-link + .nav-link {
@@ -64,8 +64,8 @@ body {
 }
 
 .nav-masthead .active {
-  color: #000;
-  border-bottom-color: #000;
+  color: #53CDE4;
+  border-bottom-color: #53CDE4;(156, 156, 156);
 }
 
 @media (min-width: 48em) {
@@ -127,6 +127,10 @@ body {
 .img-api {
   width: 48px;
   height:48px
+}
+.img-nexus {
+  width: 80px;
+  height:80px
 }
 
 textarea {
