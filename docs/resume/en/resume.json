@@ -91,87 +91,120 @@
 			}
 		],
 		"educaton": [{
-				"title": "<string>",
-				"institution": "<string>",
+				"title": "B.E. Computer Engineering",
+				"institution": "UNAM MX",
 				"period": {
-					"startDate": "<date>",
-					"endDate": "<date>",
-					"isPresent": "<boolean>"
+					"startDate": "08-2008",
+					"endDate": "06-2012",
+					"isPresent": false
 				},
 				"location": {
-					"city": "<string>",
-					"country": "<string>"
+					"city": "México City",
+					"country": "MEX"
 				}
 			},
 			{
-				"title": "<string>",
-				"institution": "<string>",
+				"title": "Postgraduate diploma in Java Oriented to Web Applications Development ",
+				"institution": "UNAM MX",
 				"period": {
-					"startDate": "<date>",
-					"endDate": "<date>",
-					"isPresent": "<boolean>"
+					"endDate": "11-2016",
+					"startDate": "04-2016",
+					"isPresent": false
 				},
 				"location": {
-					"city": "<string>",
-					"country": "<string>"
+					"city": "México City",
+					"country": "MEX"
 				}
 			}
 		],
 		"lenguages": [{
-				"name": "<string>",
-				"isNativeSpeaker": "<boolean>",
-				"level": "<string>"
+				"name": "spanish",
+				"isNativeSpeaker": true,
+				"languageLevel": "five_stars"
 			},
 			{
-				"name": "<string>",
-				"isNativeSpeaker": "<boolean>",
-				"level": "<string>"
+				"name": "english",
+				"isNativeSpeaker": false,
+				"languageLevel": "good_command"
 			}
 		],
 		"courses": [{
-				"name": "<string>",
-				"year": "<string>",
-				"hasCertification": "<boolean>",
-				"status": "<string>",
-				"institution": "<string>"
+				"name": "Oracle Java SE 8 Programmer l",
+				"year": "2020",
+				"status": "in_progress",
+                "institution": "Oracle",
+				"certification": null
 			},
 			{
-				"name": "<string>",
-				"year": "<string>",
-				"hasCertification": "<boolean>",
-				"status": "<string>",
-				"institution": "<string>"
+				"name": "Professional Scrum Master",
+				"year": "2016",
+				"status": "completed",
+                "institution": "scrum.org",
+				"certification": "https://www.scrum.org/user/197077"
 			}
 		],
 		"technologies": [{
-				"type": "<string>",
-				"name": "<string>",
-				"level": "<string>"
+                "name": "java",
+				"type": "backend",
+				"level": "five_stars"
 			},
 			{
-				"type": "<string>",
-				"name": "<string>",
-				"level": "<string>"
-			}
-		],
-		"iceCreams": [{
-				"flavour": "<string>",
-				"base": "<string>",
-				"topping": "<string>"
+                "name": "spring",
+				"type": "backend",
+				"techLevel": "five_stars"
 			},
 			{
-				"flavour": "<string>",
-				"base": "<string>",
-				"topping": "<string>"
+                "name": "javascript",
+				"type": "frontend",
+				"techLevel": "five_stars"
+			},
+			{
+                "name": "junit",
+				"type": "backend",
+				"techLevel": "like_a_big_boss_bud"
+			},
+			{
+                "name": "docker",
+				"type": "devOps",
+				"techLevel": "so_so"
+			},
+			{
+                "name": "git",
+				"type": "devOps",
+				"techLevel": "five_stars"
+			},
+			{
+                "name": "jenkins",
+				"type": "devOps",
+				"techLevel": "five_stars"
+			},
+			{
+                "name": "mongodb",
+				"type": "db",
+				"techLevel": "so_so"
+			},
+			{
+                "name": "openshift",
+				"type": "cloud",
+				"techLevel": "so_so"
+			},
+			{
+                "name": "   ",
+				"type": "frontend",
+				"techLevel": "so_so"
 			}
 		],
 		"skills": [{
-				"type": "<string>",
-				"name": "<string>"
+				"name": "agile"
 			},
 			{
-				"type": "<string>",
-				"name": "<string>"
+				"name": "devops"
+			},
+			{
+				"name": "microservices"
+			},
+			{
+				"name": "bdd"
 			}
 		]
 	}
