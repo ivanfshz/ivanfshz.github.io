@@ -223,7 +223,7 @@
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <textarea rows="4"
-                                            class="form-control command">curl --request GET \--url 'http://api.ivanfshz.io/v1/resume?format=pdf' \--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe' \--header 'cache-control: no-cache'</textarea>
+                                            class="form-control command">pending code...</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -293,34 +293,6 @@
                 $('.command').click(function () {
                     $("textarea").select();
                     document.execCommand('copy');
-                });
-            });
-
-            $(function () {
-                $('#curl').click(function () {
-                    $("textarea").val("curl --request GET"
-                        + " \n \\--url 'http://api.ivanfshz.io/v1/resume?format=pdf'"
-                        + " \n \\--header 'Postman-Token: 5b171c93-0133-43cc-a1d8-fd0036a4e0fe'"
-                        + " \n \\--header 'cache-control: no-cache'");
-                });
-            });
-
-            $(function () {
-                $('#wget').click(function () {
-                    $("textarea").val("wget --quiet"
-                        + " \n \\--method GET "
-                        + " \n \\--header 'cache-control: no-cache'"
-                        + " \n \\--header 'Postman-Token: f65dca65-173c-4fe4-a838-41155e50f984'"
-                        + " \n \\--output-document "
-                        + " \n \\- 'http://api.ivanfshz.io/v1/resume?format=pdf'");
-                });
-            });
-
-            $(function () {
-                $('#httpie').click(function () {
-                    $("textarea").val("http GET 'http://api.ivanfshz.io/v1/resume?format=pdf'"
-                        + " \n \\Postman-Token:34a515ca-78f2-4aae-bb0b-529a8b32c4ee"
-                        + " \n \\cache-control:no-cache");
                 });
             });
 

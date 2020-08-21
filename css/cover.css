@@ -137,3 +137,7 @@ textarea {
   width: 300px;
   height: 3000px;
 }
+
+.command {
+  font-family: monospace;
+}
